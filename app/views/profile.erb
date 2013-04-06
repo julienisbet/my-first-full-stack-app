@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Profile Page</h1>
+  <%= @user.email %>
+  <% if current_user %>
+    <a href="/" method="delete">Logout</a>
+  <% end %>
+</div>
+
