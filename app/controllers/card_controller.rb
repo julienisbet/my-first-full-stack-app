@@ -5,12 +5,28 @@ get '/cards/:id' do
 end
 
 post '/cards/:id' do
-  @next_card = (params[:id].to_i + 1)
   @card = Card.find(params[:id])
   @deck = @card.deck
+  
+  #store user guess
   @guess = Guess.create(:input=>params[:guess])
   @card.guesses << @guess
   @guess.input == @card.back ? @guess.correct = true : @guess.correct = false
   @guess.save
-  erb :'cards/show'
+  
+  #next card logic
+  if @card == @deck.cards.last
+    redirect 'rounds/1'
+  else
+    card_index = @deck.cards.index(@card)
+    next_index = card_index + 1
+    @next_card = @deck.cards[next_index].id
+    erb :'cards/show'
+  end
 end
+
+get '/rounds/:id' do
+  erb :'rounds/show'
+end
+
+
