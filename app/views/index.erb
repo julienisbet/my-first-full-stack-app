@@ -1,23 +1,17 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome to our Flashcard Game</h1>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+  <h2>Login or Sign Up to play</h2>
+
+  <h3>Login</h3>
+  <form action="/sessions" method="post">
+    Email: <input type="text" name="user[email]"><br>
+    Password: <input type="password" name="user[password]">
+    <input type='submit' value='Login'>
+  </form>
+  <h3> New user? </h3>
+
+  <form method="get" action="/signup">
+  <input type='submit' value='SignUp'>
+  </form>
+  </div>
