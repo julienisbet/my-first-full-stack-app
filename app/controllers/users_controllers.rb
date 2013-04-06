@@ -4,9 +4,12 @@ get '/' do
   erb :index
 end
 
+get '/sessions' do
+  
+
+end
 
 post '/sessions' do
-
   @user = User.find_by_email(params[:user][:email])
 
   if @user
@@ -24,9 +27,6 @@ delete '/sessions' do
   session.clear
 
 end
-
-
-
 
 
 get '/signup' do
