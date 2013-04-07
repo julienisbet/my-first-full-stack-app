@@ -1,17 +1,23 @@
-<div class="container">
-  <h1>Welcome to our Flashcard Game</h1>
+  <h1>Flashcard Game!</h1>
 
   <h2>Login or Sign Up to play</h2>
 
-  <h3>Login</h3>
   <form action="/sessions" method="post">
-    Email: <input type="text" name="user[email]"><br>
-    Password: <input type="password" name="user[password]">
-    <input type='submit' value='Login'>
+      Email: <input class="form_input" type="text" name="user[email]"><br>
+      <span id='password_box'>Password: <input class="form_input" type="password" name="user[password]"></span><br><br>
+      <input type='submit' value='Login'>
   </form>
-  <h3> New user? </h3>
+  <br>
+  
+  <ul>
+    <li>
+      <h3> New user? </h3>
+    </li>
 
-  <form method="get" action="/signup">
-  <input type='submit' value='SignUp'>
+    <li>
+      <form method="get" action="/signup">
+      <input type='submit' value='Sign Up'>
+    </li>
+  </ul>
   </form>
-  </div>
+

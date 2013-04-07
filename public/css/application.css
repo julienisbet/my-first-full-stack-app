@@ -1,9 +1,45 @@
+body {
+  /*background: #C8CBDB;*/
+/*  background-image: -webkit-radial-gradient(center top, circle farthest-side, #C8CBDB 10%, #00A3EF 100%);
+  background-repeat:no-repeat;*/
+  background: #70bf32;
+  background: url('radial-gradient.png') 50% 50% no-repeat;
+  background: radial-gradient(#a1e048, #6a942f);
+  text-align: center;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.form_input {
+  margin: 0.5em;
+}
+
+#password_box {
+  position: relative;
+  right: 15px;
+}
+
+#deck_headline {
+  margin-bottom: -5px;
+}
+
+
 .container {
+  background: white;
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 th {
   text-align: left;
+}
+
+ul {
+  display: inline;
+}
+
+li {
+  list-style: none;
+  
 }

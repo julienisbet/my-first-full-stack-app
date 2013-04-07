@@ -1,11 +1,10 @@
-<div class="container">
   <h1>Profile Page</h1>
   <%= @user.email %>
   <% if current_user %><br>
     <a href="/" method="delete">Logout</a><br>
   <% end %>
   <br>
-  <h2>Decks</h2>
+  <h2 id='deck_headline'>Decks</h2>
   <ul>
     <% Deck.all.each do |deck| %>
       <li><a href="rounds/new/?deck=<%= deck.id %>"><%= deck.deck_type %></a></li>
@@ -13,5 +12,5 @@
     
   </ul>
    
-</div>
+
 

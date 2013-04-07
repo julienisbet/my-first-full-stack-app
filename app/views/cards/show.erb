@@ -1,5 +1,5 @@
 <h1> Game: <%= @deck.deck_type %> </h1>
-Front of Card: <%= @card.front %>
+<h2>Front of Card: <%= @card.front %></h2>
 
 <%if @guess%>
   <%if @guess.correct%>
@@ -10,6 +10,7 @@ Front of Card: <%= @card.front %>
     The answer is...
     <%=@card.back%>
   <form action="/cards/<%=@next_card%>" method = "get">
+    <br>
   <input type="submit" value="Next Card!">
   </form>      
 <%else%>
@@ -19,6 +20,7 @@ Front of Card: <%= @card.front %>
   <input type="submit" value="Guess!">
   </form>  
 <%end%>
+<br>
 
 
 
