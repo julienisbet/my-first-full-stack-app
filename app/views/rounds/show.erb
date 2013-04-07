@@ -1,1 +1,3 @@
 <h1> Round Stats </h1>
+<p> Nice work! </p>
+<p> You got <%= @round.guesses.where("correct = ?", true).count %> correct out of <%= @round.guesses.count %> questions. </p>

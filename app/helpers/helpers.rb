@@ -6,5 +6,13 @@ helpers do
     end 
       @user
   end
+  
+  def current_round
+    if not @round
+      @round = Round.find(session[:round])
+    end 
+      @round
+  end
+
 
 end

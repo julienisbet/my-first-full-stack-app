@@ -6,6 +6,7 @@ get '/rounds/new/' do
   @round.user_id = @user.id
   @round.deck_id = @deck.id
   @round.save
+  session[:round] = @round.id
   redirect "cards/#{@card_id}"
 end
 

@@ -12,11 +12,13 @@ post '/cards/:id' do
   @guess = Guess.create(:input=>params[:guess])
   @card.guesses << @guess
   @guess.input == @card.back ? @guess.correct = true : @guess.correct = false
+  @guess.round_id = session[:round]
   @guess.save
   
   #next card logic
   if @card == @deck.cards.last
-    redirect 'rounds/1'
+    current_round
+    redirect "rounds/#{@round.id}"
   else
     card_index = @deck.cards.index(@card)
     next_index = card_index + 1
@@ -26,6 +28,7 @@ post '/cards/:id' do
 end
 
 get '/rounds/:id' do
+  current_round
   erb :'rounds/show'
 end
 
