@@ -9,10 +9,15 @@
   <%end%>
     The answer is...
     <%=@card.back%>
-  <form action="/cards/<%=@next_card%>" method = "get">
-    <br>
-  <input type="submit" value="Next Card!">
-  </form>      
+  <%if @last %>
+    <form action="../rounds/<%=@round.id%>" method = "get">
+    <input type="submit" value="Finish Round">
+    </form>
+  <%else%>
+    <form action="/cards/<%=@next_card%>" method = "get">
+    <input type="submit" value="Next Card">
+    </form>
+  <%end%>        
 <%else%>
   <form action="/cards/<%=@card.id%>" method = "post">
   What's your guess? 
@@ -20,10 +25,3 @@
   <input type="submit" value="Guess!">
   </form>  
 <%end%>
-<br>
-
-
-
-
-<!-- "cards/#{@next_card.to_s}" -->
-

@@ -17,19 +17,14 @@ post '/cards/:id' do
   
   #next card logic
   if @card == @deck.cards.last
-    current_round
-    redirect "rounds/#{@round.id}"
+    @last = true
   else
     card_index = @deck.cards.index(@card)
     next_index = card_index + 1
     @next_card = @deck.cards[next_index].id
-    erb :'cards/show'
-  end
-end
-
-get '/rounds/:id' do
+  end 
   current_round
-  erb :'rounds/show'
+  erb :'cards/show'
 end
 
 

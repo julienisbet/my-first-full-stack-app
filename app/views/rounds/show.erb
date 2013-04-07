@@ -1,3 +1,44 @@
-<h1> Round Stats </h1>
-<p> Nice work! </p>
-<p> You got <%= @round.guesses.where("correct = ?", true).count %> correct out of <%= @round.guesses.count %> questions. </p>
+<div class="container">
+<h2> Round Over! </h2>
+<div> You got <%= @round.guesses.where("correct = ?", true).count %> correct out of <%= @round.guesses.count %> questions. </div>
+<div> Round Summary </div>
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Your Guess</th>
+      <th>Answer</th>
+      <th>Correct?</th>
+    </tr>
+    <%@round.guesses.each do |guess| %>
+    <tr>
+      <td><%=guess.card.front%></td>
+      <td><%=guess.input %></td>
+      <td><%=guess.card.back %></td>
+      <td><%=guess.correct%></td>
+    </tr>
+    <%end%>
+  </table>
+
+
+<h2> All Rounds Played </h2>
+<div id = "roundtable">
+  <table>
+    <tr>
+      <th>Round Id</th>
+      <th>Deck Played</th>
+      <th>Number Correct</th>
+      <th>Number Incorrect</th>
+      <th>Total Questions</th>
+    </tr>
+    <%@user.rounds.each do |round| %>
+    <tr>
+      <td><a href = "/rounds/<%=round.id%>"><%=round.id%></a></td>
+      <td><%=round.deck.deck_type%></td>
+      <td><%=round.guesses.where("correct = ?", true).count %></td>
+      <td><%=round.guesses.where("correct = ?", false).count %></td>
+      <td><%=round.deck.cards.count%></td>
+    </tr>
+    <%end%>
+  </table>
+</div>
+</div>

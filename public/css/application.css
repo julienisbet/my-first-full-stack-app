@@ -31,6 +31,7 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
+
 th {
   text-align: left;
 }
@@ -43,3 +44,4 @@ li {
   list-style: none;
   
 }
+
