@@ -1,7 +1,7 @@
 enable :sessions
 
 get '/' do
-  erb :index
+  erb :profile
 end
 
 get '/sessions' do
@@ -33,4 +33,9 @@ end
 post '/signup' do
   @user = User.create(params[:user])
   erb :profile
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
