@@ -6,4 +6,5 @@ helpers do
     end 
       @user
   end
+
 end

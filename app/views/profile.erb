@@ -8,7 +8,7 @@
   <h2>Decks</h2>
   <ul>
     <% Deck.all.each do |deck| %>
-      <li><a href="/decks/<%= deck.id %>"><%= deck.deck_type %></a></li>
+      <li><a href="rounds/new/?deck=<%= deck.id %>"><%= deck.deck_type %></a></li>
     <% end %>
     
   </ul>

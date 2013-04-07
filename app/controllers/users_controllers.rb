@@ -4,11 +4,6 @@ get '/' do
   erb :index
 end
 
-get '/sessions' do
-  
-
-end
-
 post '/sessions' do
   @user = User.find_by_email(params[:user][:email])
 
@@ -25,29 +20,13 @@ end
 
 delete '/sessions' do
   session.clear
-
 end
-
 
 get '/signup' do
   erb :signup
 end
 
-
-
 post '/signup' do
   @user = User.create(params[:user])
-
   erb :profile
 end
-
-
-
-
-
-# post '/profile' do
-#     @user = User.find(params[:id])
-#     puts params.inspect
-  
-#   erb :profile
-# end
