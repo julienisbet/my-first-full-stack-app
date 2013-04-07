@@ -4,6 +4,11 @@ get '/' do
   erb :index
 end
 
+get '/sessions' do
+  current_user
+  erb :profile
+end
+
 post '/sessions' do
   @user = User.find_by_email(params[:user][:email])
 
@@ -15,7 +20,6 @@ post '/sessions' do
       @error = "Invalid email or password"
     end
   end
-
 end
 
 delete '/sessions' do
