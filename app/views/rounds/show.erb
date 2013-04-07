@@ -1,7 +1,7 @@
-<div class="container">
-<h2> Round Over! </h2>
+<div id = "round">
+<h1> Round Over! </h1>  
 <div> You got <%= @round.guesses.where("correct = ?", true).count %> correct out of <%= @round.guesses.count %> questions. </div>
-<div> Round Summary </div>
+<h2> Round Summary </h2>
   <table>
     <tr>
       <th>Question</th>
@@ -21,7 +21,6 @@
 
 
 <h2> All Rounds Played </h2>
-<div id = "roundtable">
   <table>
     <tr>
       <th>Round Id</th>
@@ -40,5 +39,4 @@
     </tr>
     <%end%>
   </table>
-</div>
 </div>

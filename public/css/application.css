@@ -45,3 +45,12 @@ li {
   
 }
 
+#round th {
+  background-color: #ddd;
+  padding: 5px;
+}
+
+#round table,td,th {
+  border: 1px solid black;
+  text-align: center;
+}
