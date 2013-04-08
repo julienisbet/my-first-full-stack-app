@@ -1,15 +1,20 @@
+require 'CSV'
+
 #create dummy decks
 deck1 = Deck.create(:deck_type=>"States and Capitals")
 deck2 = Deck.create(:deck_type=>"Basic Math")
+deck3 = Deck.create(:deck_type=> "State Abbreviations")
 
-card1 = Card.create(:front=>"California", :back=>"Sacramento")
-card2 = Card.create(:front=>"North Carolina", :back=>"Raleigh")
-card3 = Card.create(:front=>"New York", :back=>"Albany")
-card4 = Card.create(:front=>"Texas", :back=>"Austin")
 card5 = Card.create(:front=>"2+2", :back=>"4")
 card6 = Card.create(:front=>"2x2", :back=>"4")
 card7 = Card.create(:front=>"PI", :back=>"3.14159265359")
-card8 = Card.create(:front=>"Michigan", :back=>"Lansing")
 
-deck1.cards=[card1, card2, card3, card4, card8 ]
 deck2.cards=[card5, card6, card7]
+
+
+csv = "/Users/apprentice/Desktop/julie/web_flashcards/db/states.csv"
+CSV.foreach(csv, {:headers => true}) do |row|
+  deck3.cards << Card.create(:front=>row[0], :back=>row[1])
+end 
+
+

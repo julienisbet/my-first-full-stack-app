@@ -9,7 +9,7 @@ post '/cards/:id' do
   @deck = @card.deck
   
   #store user guess
-  @guess = Guess.create(:input=>params[:guess].upcase)
+  @guess = Guess.create(:input=>params[:guess])
   @card.guesses << @guess
   @guess.input == @card.back ? @guess.correct = true : @guess.correct = false
   @guess.round_id = session[:round]

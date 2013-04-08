@@ -32,6 +32,7 @@ end
 
 post '/signup' do
   @user = User.create(params[:user])
+  session[:id] = @user.id
   erb :profile
 end
 

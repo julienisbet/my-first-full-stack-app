@@ -12,6 +12,7 @@ body {
 
 .form_input {
   margin: 0.5em;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 #password_box {
@@ -20,7 +21,9 @@ body {
 }
 
 #deck_headline {
-  margin-bottom: -5px;
+  font-size: 150%;
+  margin-bottom: 10px;
+  margin-top:10px;
 }
 
 
@@ -46,17 +49,10 @@ li {
   list-style: none;  
 }
 
-#round th {
-  background-color: #ddd;
-  padding: 5px;
-}
 
-#round table,td,th {
-  border: 1px solid black;
-  text-align: center;
-}
 
 .nav {
+  text-align: left;
   width: 300px;
   padding-top: 10px;
 }
@@ -82,6 +78,7 @@ li {
   color:black;
   font-size:15px;
   font-weight:bold;
+  font-family: 'Julius Sans One', sans-serif;
   padding:6px 24px;
   text-decoration:none;
   text-shadow:1px 1px 0px #ffffff;
@@ -95,5 +92,67 @@ li {
   top:1px;
 }
 
+.deck_heading {
+  font-family: 'Noto Sans', sans-serif;
+  font-style: bold;
+  text-align: left;
+}
+
+
+
+.card {
+  padding: 10px;
+  margin-left: 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  border: 1px solid black;
+  border-radius:6px;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+  background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+  background-color:#ededed;
+  font-family: 'Noto Sans', sans-serif;
+
+}
+
+.guess_answer {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#round_history{
+  font-family: 'Noto Sans', sans-serif;  
+}
+
+th {
+  background-color: #ddd;
+  padding: 5px;
+}
+
+.round #heading{
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 150%;
+  margin: 10px;
+}
+
+.round #summary{
+  font-family: 'Noto Sans', sans-serif;  
+}
+
+.round table {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.round table,td,th {
+  border: 1px solid black;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#signup {
+  font-family: 'Noto Sans', sans-serif;    
+}
 
 

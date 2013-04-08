@@ -6,7 +6,7 @@
     <form action="/sessions" method="post">
         Email: <input class="form_input" type="text" name="user[email]"><br>
         <span id='password_box'>Password: <input class="form_input" type="password" name="user[password]"></span><br><br>
-        <input type='submit' value='Login'>
+        <input type='submit' class = "button" value='Login'>
     </form>
     <br>
     
@@ -17,23 +17,42 @@
 
       <li>
         <form method="get" action="/signup">
-        <input type='submit' value='Sign Up'>
+        <input type='submit' class = "button" value='Sign Up'>
       </li>
     </ul>
     </form>
 <%else%>
   <h1>Profile Page</h1>
   <%= @user.email %>
-  <% if current_user %><br>
-    <a href="/" method="delete">Logout</a><br>
-  <% end %>
   <br>
-  <h2 id='deck_headline'>Decks</h2>
+  <div id='deck_headline'>Select a Deck</div>
   <ul>
     <% Deck.all.each do |deck| %>
       <li><a href="rounds/new/?deck=<%= deck.id %>"><%= deck.deck_type %></a></li>
     <% end %>    
   </ul>
+  
+  <h2> Round History </h2>
+  <table id = "round_history">
+    <tr>
+      <th>Round Id</th>
+      <th>Deck Played</th>
+      <th>Number Correct</th>
+      <th>Number Incorrect</th>
+      <th>Total Questions</th>
+    </tr>
+    <%@user.rounds.each do |round| %>
+    <tr>
+      <td><a href = "/rounds/<%=round.id%>"><%=round.id%></a></td>
+      <td><%=round.deck.deck_type%></td>
+      <td><%=round.guesses.where("correct = ?", true).count %></td>
+      <td><%=round.guesses.where("correct = ?", false).count %></td>
+      <td><%=round.deck.cards.count%></td>
+    </tr>
+    <%end%>
+  </table>
+
+
 <%end%>
    
 
