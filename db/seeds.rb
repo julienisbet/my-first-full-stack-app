@@ -13,6 +13,8 @@ deck2.cards=[card5, card6, card7]
 
 
 csv = File.join(APP_ROOT, "db", "states.csv")
+puts "======"
+puts csv
 CSV.foreach(csv, {:headers => true}) do |row|
   deck3.cards << Card.create(:front=>row[0], :back=>row[1])
 end 
