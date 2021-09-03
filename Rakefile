@@ -1,5 +1,5 @@
 require 'rake'
-if ENV['RAKE_ENV'] != 'production'
+if ENV['RACK_ENV'] != 'production'
   require 'rspec/core/rake_task'
 end
 
