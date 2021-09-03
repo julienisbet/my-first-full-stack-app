@@ -1,4 +1,4 @@
-require 'CSV'
+require 'csv'
 
 #create dummy decks
 deck1 = Deck.create(:deck_type=>"States and Capitals")
