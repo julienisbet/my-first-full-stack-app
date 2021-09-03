@@ -1,8 +1,4 @@
 require 'rake'
-if ENV['RACK_ENV'] != 'production'
-  require 'rspec/core/rake_task'
-end
-
 
 require ::File.expand_path('../config/environment', __FILE__)
 
@@ -123,7 +119,11 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
-desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+if ENV['RACK_ENV'] != 'production'
+  require 'rspec/core/rake_task'
+  desc "Run the specs"
+  RSpec::Core::RakeTask.new(:spec)
 
-task :default  => :specs
+  task :default  => :specs
+
+end
