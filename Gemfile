@@ -17,9 +17,9 @@ gem 'rake'
 
 gem 'shotgun'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
-gem 'debugger'
+# gem 'debugger'
 
 group :test do
   gem 'faker'
