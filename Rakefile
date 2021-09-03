@@ -1,5 +1,7 @@
 require 'rake'
-require 'rspec/core/rake_task'
+if ENV['RAKE_ENV'] != 'production'
+  require 'rspec/core/rake_task'
+end
 
 
 require ::File.expand_path('../config/environment', __FILE__)
