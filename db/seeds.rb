@@ -12,7 +12,7 @@ card7 = Card.create(:front=>"PI", :back=>"3.14159265359")
 deck2.cards=[card5, card6, card7]
 
 
-csv = "/Users/jules/Downloads/web_flashcards/db/states.csv"
+csv = File.join(APP_ROOT, "db", "states.csv")
 CSV.foreach(csv, {:headers => true}) do |row|
   deck3.cards << Card.create(:front=>row[0], :back=>row[1])
 end 
